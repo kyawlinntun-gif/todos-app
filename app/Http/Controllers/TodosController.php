@@ -20,4 +20,21 @@ class TodosController extends Controller
             'todo' => $todo
         ]);
     }
+
+    public function create()
+    {
+        return view('todos.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|min:6|max:12',
+            'description' => 'required'
+        ]);
+
+        Todo::create(['name' => $request->name, 'description' => $request->description, 'completed' => false]);
+
+        return redirect('/todos');
+    }
 }

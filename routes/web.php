@@ -21,5 +21,7 @@ Route::get('/', function () {
 
 Route::get('/todos', 'TodosController@index');
 Route::get('/todos/{todo}', 'TodosController@show');
+Route::get('/todos/create', 'TodosController@create');
+Route::post('/todos', 'TodosController@store');
 
 /* ---------- End of Todos ---------- */
