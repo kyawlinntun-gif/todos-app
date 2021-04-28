@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <ul class="list-group">
                         @foreach ($todos as $todo)
-                            <li class="list-group-item">{{ $todo->name }} <a href="{{ url('/todos/' . $todo->id) }}" class="btn btn-primary btn-sm float-end">View</a></li>
+                            <li class="list-group-item">{{ $todo->name }} @if(!$todo->completed)<a href="{{ url('/todos/' . $todo->id . '/complete') }}" class="btn btn-warning btn-sm float-end text-white">Completed</a>@endif<a href="{{ url('/todos/' . $todo->id) }}" class="btn btn-primary btn-sm float-end mx-2">View</a></li>
                         @endforeach
                     </ul>
                 </div>

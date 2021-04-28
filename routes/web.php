@@ -23,5 +23,9 @@ Route::get('/todos', 'TodosController@index');
 Route::get('/todos/{todo}', 'TodosController@show');
 Route::get('/todos/create', 'TodosController@create');
 Route::post('/todos', 'TodosController@store');
+Route::get('/todos/{todo}/edit', 'TodosController@edit');
+Route::put('/todos/{todo}/update', 'TodosController@update');
+Route::delete('/todos/{todo}/delete', 'TodosController@destroy');
+Route::get('/todos/{todo}/complete', 'TodosController@complete');
 
 /* ---------- End of Todos ---------- */

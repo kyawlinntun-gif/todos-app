@@ -19,6 +19,14 @@
                     {{ $todo->description }}
                 </div>
             </div>
+            <a href="{{ url('/todos/' . $todo->id . '/edit') }}" class="btn btn-info mt-2">Edit</a>
+            <a href="#" class="btn btn-danger mt-2" onclick="event.preventDefault(); document.getElementById('delete').submit();">Delete</a>
+
+            <form action="{{ url('/todos/' . $todo->id . '/delete') }}" method="POST" id="delete">
+                @csrf
+                @method('delete')
+            </form>
+
         </div>
     </div>
 @endsection
